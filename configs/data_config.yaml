@@ -1,0 +1,44 @@
+data:
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+  samples_dir: "data/samples"
+
+  amazon_reviews:
+    categories:
+      - "Electronics"
+      - "Home_and_Kitchen"
+      - "Sports_and_Outdoors"
+      - "Beauty_and_Personal_Care"
+      - "Office_Products"
+    max_reviews: 100000               
+    min_review_length: 20            
+    max_review_length: 300          
+    test_split: 0.15
+    val_split: 0.10
+    random_seed: 42
+
+  mvtec:
+    categories:                      
+      - "cable"
+      - "metal_nut"
+      - "transistor"
+      - "grid"
+    image_size: 224                  
+    augmentation: true
+
+  sample_size: 1000                  
+
+text:
+  max_length: 256                    
+  min_word_count: 5                  
+  max_word_count: 300
+
+rating:
+  positive_threshold: 4             
+  negative_threshold: 2            
+
+paths:
+  models_dir: "models"
+  outputs_dir: "outputs"
+  logs_dir: "logs"
+  mlflow_uri: "logs/mlruns"

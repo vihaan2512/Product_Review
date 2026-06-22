@@ -1,0 +1,51 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Environments
+.env
+.venv/
+venv/
+env/
+
+# Data
+data/raw/
+data/processed/
+data/samples/
+
+# Models
+models/*.pt
+models/*.pth
+models/*.bin
+models/*.safetensors
+
+# MLflow
+logs/mlruns/
+
+# Notebooks checkpoints
+.ipynb_checkpoints/
+notebooks/.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Outputs (generated, not source)
+outputs/*.png
+outputs/*.csv
+outputs/*.json
+
+# Keep placeholder files
+!models/.gitkeep
+!outputs/.gitkeep
