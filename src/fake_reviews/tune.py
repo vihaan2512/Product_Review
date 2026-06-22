@@ -4,7 +4,7 @@ import yaml
 import numpy as np
 import pandas as pd
 import optuna
-from sklearn.ensemble import GradientBoostingClassifier
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import StratifiedKFold, cross_val_score
 from loguru import logger
@@ -14,19 +14,18 @@ from src.fake_reviews.features import LinguisticFeatureExtractor
 
 
 def objective(trial: optuna.Trial, X: np.ndarray, y: np.ndarray) -> float:
-    n_estimators = trial.suggest_int("n_estimators_gb", 50, 300, step=50)
-    learning_rate = trial.suggest_float("learning_rate", 0.01, 0.2, log=True)
-    max_depth = trial.suggest_int("max_depth", 3, 8)
-    subsample = trial.suggest_float("subsample", 0.5, 1.0)
-    min_samples_leaf = trial.suggest_int("min_samples_leaf", 2, 20)
+    n_estimators = trial.suggest_int("n_estimators", 50, 300, step=50)
+    max_depth = trial.suggest_int("max_depth", 3, 10)
+    min_samples_split = trial.suggest_int("min_samples_split", 2, 10)
+    min_samples_leaf = trial.suggest_int("min_samples_leaf", 2, 10)
 
-    clf = GradientBoostingClassifier(
+    clf = RandomForestClassifier(
         n_estimators=n_estimators,
-        learning_rate=learning_rate,
         max_depth=max_depth,
-        subsample=subsample,
+        min_samples_split=min_samples_split,
         min_samples_leaf=min_samples_leaf,
-        random_state=42
+        random_state=42,
+        n_jobs=-1
     )
 
     cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)

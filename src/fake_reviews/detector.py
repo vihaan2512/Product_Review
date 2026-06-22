@@ -3,7 +3,7 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
-from sklearn.ensemble import IsolationForest, RandomForestClassifier, GradientBoostingClassifier
+from sklearn.ensemble import IsolationForest, RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import StratifiedKFold, cross_val_score
@@ -26,7 +26,6 @@ class FakeReviewDetector:
         self,
         contamination: float = 0.05,
         n_estimators_if: int = 200,
-        n_estimators_gb: int = 100,
         blend_weight: float = 0.7,  
         random_state: int = 42,
     ):
