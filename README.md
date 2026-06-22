@@ -53,10 +53,8 @@ The system evaluates product quality through four core AI dimensions:
 *   **Backend Server**: FastAPI, Uvicorn
 *   **Database & Cache**: SQLite (History tracking), InMemory TTL Cache
 *   **Deep Learning & NLP**: PyTorch, Hugging Face Transformers (`DistilBERT`, `DeBERTa`)
-*   **Machine Learning (Scikit-Learn)**: Gradient Boosting Classifier, Isolation Forest, Random Forest
+*   **Machine Learning (Scikit-Learn)**:  Random Forest, Isolation Forest
 *   **Web Scraping APIs**: Apify SDK (Amazon Reviews Scraper Actor), ScraperAPI Proxies
-*   **Visualizations**: Plotly (gauges, radar charts, distribution bars)
-*   **Experiment Tracking**: MLflow, Optuna
 
 ---
 
