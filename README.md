@@ -30,9 +30,6 @@ The system evaluates product quality through four core AI dimensions:
 ├── configs/
 │   ├── data_config.yaml     # Dataset categories & training configurations
 │   └── best_hparams.yaml    # Optuna-optimized model hyperparameters
-├── data/
-│   ├── raw/                 # Raw dataset files (Parquet/CSV)
-│   └── processed/           # Split dataset Parquet files (train/val/test)
 ├── models/                  # Saved model weights & tokenizers
 ├── src/                     # Core python backend source code
 │   ├── aspect/              # Aspect-based sentiment analysis modules
@@ -41,20 +38,8 @@ The system evaluates product quality through four core AI dimensions:
 │   ├── fusion/              # Multimodal regression scoring logic
 │   ├── sentiment/           # Sentiment classifier definitions & training
 │   └── utils/               # Scraper interfaces, metrics & preprocessors
-├── download.py              # Balanced dataset downloader (Hugging Face)
 ├── requirements.txt         # Project dependencies
 ```
-
----
-
-## 🛠️ Technology Stack
-
-*   **Frontend**: Streamlit
-*   **Backend Server**: FastAPI, Uvicorn
-*   **Database & Cache**: SQLite (History tracking), InMemory TTL Cache
-*   **Deep Learning & NLP**: PyTorch, Hugging Face Transformers (`DistilBERT`, `DeBERTa`)
-*   **Machine Learning (Scikit-Learn)**:  Random Forest, Isolation Forest
-*   **Web Scraping APIs**: Apify SDK (Amazon Reviews Scraper Actor), ScraperAPI Proxies
 
 ---
 
